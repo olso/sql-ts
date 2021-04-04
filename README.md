@@ -145,7 +145,11 @@ Adds additional types to the type resolution. The order in which types are resol
   "connection": {},
   "typeMap": {
     "number": ["decimal", "float"],
-    "string": ["nvarchar", "varchar"]
+    "string": ["nvarchar", "varchar"],
+    // pg specific text[]
+    "string[]": [
+      "_text", // select * from pg_type where typname = '_text';
+    ],
   }
 }
 ```
